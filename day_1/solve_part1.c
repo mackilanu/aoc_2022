@@ -8,29 +8,18 @@ int main() {
     ssize_t read;
 
     fp = fopen("data.in", "r");
-    if (fp == NULL)
-        exit(EXIT_FAILURE);
 
     int largest_sum = 0;
     int sum = 0;
     while ((read = getline(&line, &len, fp)) != -1) {
-        if(read  == 1) {
-            if(sum > largest_sum)
-               largest_sum = sum;
+        if(read == 1) {
+            largest_sum = sum > largest_sum ? sum : largest_sum;
             sum = 0;
-        } else {
+        } else
             sum += atoi(line);
-
-        }
-
     }
-
-    fclose(fp);
-    if (line)
-        free(line);
 
     printf("#1: %d\n", largest_sum);
     return 0;
 }
-
 

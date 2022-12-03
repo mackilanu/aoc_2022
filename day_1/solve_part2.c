@@ -32,12 +32,10 @@ int main() {
             } else if(sum > top3[2]) {
                 top3[2] = sum;
             }
-               
             sum = 0;
         } else {
             sum += atoi(line);
         }
-
     }
 
     fclose(fp);
