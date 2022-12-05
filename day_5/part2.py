@@ -22,4 +22,4 @@ with open('data.in') as f:
 
 for i in start:
     print(i[0], end="")
-print('/n')
+print('\n')
